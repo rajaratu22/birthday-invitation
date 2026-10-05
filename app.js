@@ -1,4 +1,4 @@
-const D = birthdayData, $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+﻿const D = birthdayData, $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const safe = (k, v) => { try { return v === undefined ? JSON.parse(localStorage.getItem(k)) : localStorage.setItem(k, JSON.stringify(v)); } catch { return null; } };
 

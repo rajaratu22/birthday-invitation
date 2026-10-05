@@ -1,4 +1,4 @@
-:root{--ink:#2a1f3d;--lav:#b9a3e3;--pink:#f3c4d8;--gold:#c9a35b;--pearl:#fff8ed;--sb:env(safe-area-inset-bottom,0px)}
+﻿:root{--ink:#2a1f3d;--lav:#b9a3e3;--pink:#f3c4d8;--gold:#c9a35b;--pearl:#fff8ed;--sb:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
 body{font:400 16px/1.7 Manrope,sans-serif;background:linear-gradient(135deg,#fff8e8 0%,#fff4fa 48%,#eff7ff 100%);background-attachment:fixed;color:var(--ink);overflow-x:hidden}body.locked{overflow:hidden}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.05}.it{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem}

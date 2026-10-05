@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Birthday Celebration â€” Nayla</title>
+<meta name="description" content="Kamu diundang merayakan hari istimewa bersama Nayla.">
+<meta property="og:title" content="Birthday Celebration â€” Nayla"><meta property="og:description" content="Kamu diundang merayakan hari istimewa bersama Nayla."><meta property="og:image" content="hero.webp"><meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#2a1f3d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3EðŸŽ‚%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body class="locked">
+<section id="open" class="open" aria-label="Pembuka">
+  <img src="hero.webp" alt="" class="open-bg">
+  <div class="open-in"><p id="recipientGreeting">Undangan istimewa untuk</p>
+  <label class="guest-label" for="guestName">Nama tamu undangan</label><input id="guestName" type="text" maxlength="60" autocomplete="name" placeholder="Tulis nama tamu di sini">
+  <h2 data-name></h2><p class="it">sebuah perayaan ulang tahun</p>
+  <button class="btn" id="openBtn">Buka undangan <i>â†’</i></button></div>
+</section>
+<div class="party-decor" aria-hidden="true">
+  <span class="balloon pink"></span><span class="balloon lilac"></span><span class="balloon yellow"></span>
+  <span class="balloon blue"></span><span class="balloon coral"></span>
+  <span class="sparkle">âœ¦</span><span class="sparkle">âœ§</span><span class="sparkle">â˜…</span>
+  <span class="sparkle">âœ¦</span><span class="sparkle">âœ§</span><span class="sparkle">â˜…</span>
+</div>
+<canvas id="fx" aria-hidden="true"></canvas><div id="glow" aria-hidden="true"></div>
+<nav class="top" aria-label="Navigasi"><a href="#home">Home</a><a href="#story">Cerita</a><a href="#event">Acara</a><a href="#gallery">Galeri</a><a href="#rsvp">RSVP</a></nav>
+<nav class="bottom" aria-label="Navigasi bawah"><a href="#home"><b>âŒ‚</b>Home</a><a href="#event"><b>âœ¦</b>Acara</a><a href="#gallery"><b>â–£</b>Galeri</a><a href="#rsvp"><b>âœ‰</b>RSVP</a></nav>
+<button id="music" class="music" aria-label="Putar atau jeda musik"><span class="eq"><s></s><s></s><s></s></span></button>
+
+<main id="app">
+<header id="home" class="hero">
+  <img id="heroImg" alt="Foto utama yang berulang tahun">
+  <div class="bgage" data-age aria-hidden="true"></div>
+  <div class="hero-t"><p class="rv">Saatnya merayakan</p><h1 class="rv" data-name></h1><p class="rv it">genap berusia</p></div>
+</header>
+
+<section class="count" aria-label="Hitung mundur"><div id="cd" class="cd"></div><div id="cdDone" class="done" hidden><h2>Hari ini harinya.</h2><p>Mari kita rayakan!</p></div></section>
+
+<section id="story" class="story"><h2 class="rv">Satu tahun lagi.<br>Satu bab baru.</h2>
+<p class="rv">Setahun penuh kenangan, mimpi, tawa, dan momen indah.</p><p class="rv big">Dan tahun ini pantas dirayakan bersama kamu.</p></section>
+
+<section id="event" class="event"><div class="rv"><p class="lbl">Perayaan</p><h2 id="evDate"></h2><p class="time" id="evTime"></p></div>
+<div class="rv"><h3 id="evVenue"></h3><p id="evAddr"></p><a class="btn" id="evMap" target="_blank" rel="noopener">Lihat lokasi <i>â†’</i></a></div></section>
+
+<section id="gallery" class="gal"><h2 class="rv">Momen-momen kecil<br>yang membuat tahun ini istimewa.</h2><div id="grid" class="grid"></div></section>
+
+<section id="rsvp" class="rsvp"><h2 class="rv">Kamu datang?</h2>
+<div class="opts" id="opts"><button data-v="Hadir">Ya, aku datang</button><button data-v="Mungkin">Mungkin</button><button data-v="Tidak">Maaf, tidak bisa</button></div>
+<form id="rsvpForm" hidden><input id="rName" placeholder="Nama kamu" required maxlength="40" aria-label="Nama"><button class="btn">Kirim jawaban <i>â†’</i></button></form>
+<div id="rsvpDone" class="thanks" hidden><h3>Terima kasih!</h3><p>Jawabanmu sudah tercatat. Sampai jumpa di pesta!</p></div></section>
+
+<section class="wish"><h2 class="rv">Tinggalkan ucapan manis</h2>
+<form id="wForm"><input id="wName" placeholder="Nama" required maxlength="40" aria-label="Nama"><textarea id="wMsg" placeholder="Tulis ucapanmu" required maxlength="240" rows="3" aria-label="Pesan"></textarea><button class="btn">Kirim ucapan <i>â†’</i></button></form>
+<div id="wList" class="wlist"></div></section>
+
+<section class="gift"><h2 class="rv">Sedikit hadiah</h2><p class="rv">Kehadiranmu sudah jadi hadiah terbaik. Tapi jika ingin berbagi sedikit kebahagiaan, silakan.</p>
+<div class="card rv"><span id="gBank"></span><strong id="gNum"></strong><span id="gHold"></span><button class="btn" id="copy">Salin nomor rekening</button></div></section>
+
+<footer><h2 data-name></h2><p>Sampai jumpa di hari bahagianya.</p></footer>
+</main>
+
+<div id="lb" class="lb" hidden role="dialog" aria-modal="true" aria-label="Foto"><button class="x" aria-label="Tutup">Ã—</button><button class="pv" aria-label="Sebelumnya">â€¹</button><div class="lbi"></div><button class="nx" aria-label="Berikutnya">â€º</button><p id="lbCap"></p></div>
+<script src="data.js"></script><script src="app.js"></script></body></html>
